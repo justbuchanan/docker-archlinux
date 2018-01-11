@@ -19,10 +19,7 @@
 # Aforementioned statistics are public and can be accesed here (If you're interested):
 # https://goo.gl/#analytics/goo.gl/QYfPju/all_time
 
-
-# Make sure our shiny new arch is up-to-date
-echo "Checking for system updates..."
-sudo pacman -Syu
+set -e
 
 # Create a tmp-working-dir and navigate into it
 mkdir -p /tmp/pacaur_install
@@ -38,13 +35,13 @@ sudo pacman -S expac yajl git --noconfirm --needed
 # Install "cower" from AUR
 if [ ! -n "$(pacman -Qs cower)" ]; then
     curl -o PKGBUILD https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=cower
-    makepkg PKGBUILD --skippgpcheck --install --needed
+    makepkg PKGBUILD --skippgpcheck --install --needed --noconfirm
 fi
 
 # Install "pacaur" from AUR
 if [ ! -n "$(pacman -Qs pacaur)" ]; then
     curl -o PKGBUILD https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=pacaur
-    makepkg PKGBUILD --install --needed
+    makepkg PKGBUILD --install --needed --noconfirm
 fi
 
 # Clean up...

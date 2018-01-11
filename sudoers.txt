@@ -1,0 +1,6 @@
+root ALL=(ALL) ALL
+test ALL=(ALL) NOPASSWD: ALL
+%wheel  ALL=(ALL)       NOPASSWD: ALL
+Defaults    env_reset
+Defaults lecture = never
+Defaults    secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
