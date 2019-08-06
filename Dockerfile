@@ -1,4 +1,4 @@
-FROM base/archlinux
+FROM archlinux/base
 MAINTAINER Justin Buchanan <justbuchanan@gmail.com>
 
 # update/init keyring
